@@ -43,6 +43,10 @@ public class Main {
                 .map(n1 -> n1.toString()).reduce((n1,n2) -> n1.concat(n2));
         System.out.println(reduce2);
 
+        //reduce - same as above but oneline performance
+        String reduce3 = list.stream().reduce("", (n1,n2) -> n1.toString().concat(n2.toString()),(n1,n2) -> n1.concat(n2));
+        System.out.println(reduce3);
+
 
 
     }
