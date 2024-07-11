@@ -38,10 +38,10 @@ public class Main {
                 .reduce(1,(n1,n2) -> n1 * n2);
         System.out.println(multiplication1);
 
-        //reduce - concat
-        String concatenate1 = listStr.stream()
-                .reduce("",(s1,s2) -> s1.concat(s2));
-        System.out.println(concatenate1);
+        //reduce - map + combiner
+        Optional<String> reduce2 = list.stream()
+                .map(n1 -> n1.toString()).reduce((n1,n2) -> n1.concat(n2));
+        System.out.println(reduce2);
 
 
     }
