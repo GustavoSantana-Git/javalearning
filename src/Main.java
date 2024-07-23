@@ -47,6 +47,13 @@ public class Main {
         //reduce - same as above but oneline performance
         String reduce3 = list.stream().reduce("", (n1,n2) -> n1.toString().concat(n2.toString()),(n1,n2) -> n1.concat(n2));
         System.out.println(reduce3);
+        List<Integer> collect = list.stream()
+                .collect(
+                        () -> new ArrayList<>(),
+                        (l,e) -> l.add(e),
+                        (l1,l2) -> l1.addAll(l2)
+                );
+        System.out.println(collect);
 
 
     }
